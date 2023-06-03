@@ -1,0 +1,7 @@
+﻿<Properties StartupConfiguration="{F880220E-5440-449C-A086-437C06421FF9}|Default">
+  <MonoDevelop.Ide.ItemProperties.OnlineSchool.Domain FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.OnlineSchool.Infrastructure FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.OnlineSchool.Application FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.OnlineSchool.Api FirstBuild="True" PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+</Properties>
