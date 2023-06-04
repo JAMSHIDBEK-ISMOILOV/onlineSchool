@@ -5,6 +5,11 @@ namespace OnlineSchool.Domain.Entities
 {
     public class Teacher
     {
+        public Teacher()
+        {
+            Sciences = new HashSet<Science>();
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
