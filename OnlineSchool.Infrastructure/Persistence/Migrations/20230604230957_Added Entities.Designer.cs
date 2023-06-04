@@ -10,7 +10,7 @@ using OnlineSchool.Infrastructure.Persistence;
 namespace OnlineSchool.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230604225233_Added Entities")]
+    [Migration("20230604230957_Added Entities")]
     partial class AddedEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
