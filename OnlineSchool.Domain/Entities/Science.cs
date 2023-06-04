@@ -13,6 +13,7 @@ namespace OnlineSchool.Domain.Entities
 
 		public Teacher Teacher { get; set; }
 		public Student Student { get; set; }
+		public Grade Grade { get; set; }
 	}
 }
 

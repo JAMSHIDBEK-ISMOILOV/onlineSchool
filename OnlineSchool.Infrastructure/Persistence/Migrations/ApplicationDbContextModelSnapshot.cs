@@ -19,6 +19,34 @@ namespace OnlineSchool.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("OnlineSchool.Domain.Entities.Grade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("ScienceId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Score")
+                        .HasColumnType("double precision")
+                        .HasMaxLength(10);
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ScienceId")
+                        .IsUnique();
+
+                    b.HasIndex("StudentId")
+                        .IsUnique();
+
+                    b.ToTable("Grade");
+                });
+
             modelBuilder.Entity("OnlineSchool.Domain.Entities.Science", b =>
                 {
                     b.Property<int>("Id")
@@ -77,6 +105,9 @@ namespace OnlineSchool.Infrastructure.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("StudentRegNumber")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.ToTable("Students");
@@ -116,6 +147,21 @@ namespace OnlineSchool.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("OnlineSchool.Domain.Entities.Grade", b =>
+                {
+                    b.HasOne("OnlineSchool.Domain.Entities.Science", "Science")
+                        .WithOne("Grade")
+                        .HasForeignKey("OnlineSchool.Domain.Entities.Grade", "ScienceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineSchool.Domain.Entities.Student", "Student")
+                        .WithOne("Grade")
+                        .HasForeignKey("OnlineSchool.Domain.Entities.Grade", "StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("OnlineSchool.Domain.Entities.Science", b =>

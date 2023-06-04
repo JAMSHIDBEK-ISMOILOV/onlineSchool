@@ -16,7 +16,9 @@ namespace OnlineSchool.Domain.Entities
 		public string PhoneNumber { get; set; }
 		public string Email { get; set; }
 		public DateTime BirthDate { get; set; }
+		public int StudentRegNumber { get; set; }
 
+		public Grade Grade { get; set; }
 		public ICollection<Science> Sciences { get; set; }
 	}
 }
