@@ -71,7 +71,7 @@ namespace OnlineSchool.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Grade",
+                name: "Grades",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -82,15 +82,15 @@ namespace OnlineSchool.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grade", x => x.Id);
+                    table.PrimaryKey("PK_Grades", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Grade_Sciences_ScienceId",
+                        name: "FK_Grades_Sciences_ScienceId",
                         column: x => x.ScienceId,
                         principalTable: "Sciences",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Grade_Students_StudentId",
+                        name: "FK_Grades_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "Id",
@@ -98,14 +98,14 @@ namespace OnlineSchool.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Grade_ScienceId",
-                table: "Grade",
+                name: "IX_Grades_ScienceId",
+                table: "Grades",
                 column: "ScienceId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Grade_StudentId",
-                table: "Grade",
+                name: "IX_Grades_StudentId",
+                table: "Grades",
                 column: "StudentId",
                 unique: true);
 
@@ -123,7 +123,7 @@ namespace OnlineSchool.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Grade");
+                name: "Grades");
 
             migrationBuilder.DropTable(
                 name: "Sciences");

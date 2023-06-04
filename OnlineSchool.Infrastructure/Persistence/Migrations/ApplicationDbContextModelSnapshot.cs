@@ -44,7 +44,7 @@ namespace OnlineSchool.Infrastructure.Migrations
                     b.HasIndex("StudentId")
                         .IsUnique();
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("OnlineSchool.Domain.Entities.Science", b =>

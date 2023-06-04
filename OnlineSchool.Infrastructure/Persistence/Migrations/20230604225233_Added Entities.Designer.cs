@@ -10,7 +10,7 @@ using OnlineSchool.Infrastructure.Persistence;
 namespace OnlineSchool.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230604223743_Added Entities")]
+    [Migration("20230604225233_Added Entities")]
     partial class AddedEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace OnlineSchool.Infrastructure.Migrations
                     b.HasIndex("StudentId")
                         .IsUnique();
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("OnlineSchool.Domain.Entities.Science", b =>

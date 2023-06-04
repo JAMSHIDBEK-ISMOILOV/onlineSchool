@@ -13,6 +13,7 @@ namespace OnlineSchool.Infrastructure.Persistence
 		{
 		}
 
+        public DbSet<Grade> Grades { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Science> Sciences { get; set; }
